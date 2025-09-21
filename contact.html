@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Brendan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-gradient-to-r from-indigo-700 to-teal-500 text-white">
+    <div class="max-w-5xl mx-auto p-6 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="/assets/logo.svg" alt="Logo" class="w-10 h-10"/>
+        <span class="text-xl font-semibold">Brendan</span>
+      </a>
+      <nav class="flex gap-6">
+        <a href="/" class="hover:underline underline-offset-4">Home</a>
+        <a href="/about.html" class="hover:underline underline-offset-4">About</a>
+        <a href="/contact.html" class="hover:underline underline-offset-4">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold">Contact</h1>
+    <p class="mt-2 text-slate-700">Send a message below. For demo purposes this can post to Supabase.</p>
+
+    <form id="contact-form" class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-medium">Name</label>
+        <input name="name" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium">Email</label>
+        <input name="email" type="email" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium">Message</label>
+        <textarea name="message" rows="5" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+      </div>
+      <button class="px-5 py-2 rounded-lg bg-teal-600 text-white hover:bg-teal-700" type="submit">Send</button>
+      <p id="status" class="text-sm mt-2"></p>
+    </form>
+  </main>
+
+  <footer class="border-t border-slate-200 py-8">
+    <div class="max-w-5xl mx-auto px-6 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>© <span id="year"></span> Brendan. All rights reserved.</p>
+      <p><a href="/about.html" class="hover:underline">About</a> · <a href="/contact.html" class="hover:underline">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/supabase-contact.js"></script>
+</body>
+</html>
