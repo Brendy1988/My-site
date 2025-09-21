@@ -22,12 +22,30 @@
   </header>
 
   <main class="max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-3xl font-bold">About</h1>
-    <p class="mt-4 text-slate-700">
-      This is a lightweight Tailwind starter designed for iPad workflows.
-      Replace this copy with your bio, services, or mission statement.
-    </p>
-  </main>
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    <!-- Profile Photo -->
+    <img src="/assets/headshot.jpeg" 
+         alt="Brendan Skrocki" 
+         class="w-40 h-40 rounded-full shadow-lg object-cover">
+
+    <!-- Bio Text -->
+    <div>
+      <h1 class="text-3xl font-bold">About Me</h1>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        Hi, I’m <span class="font-semibold">Brendan Skrocki</span>. I live on Long Island, NY
+        and I’ve spent my career helping small and mid-sized businesses thrive by managing
+        their IT, infrastructure, and cybersecurity.
+      </p>
+
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        My background is a mix of technology, sales, and creative work. Before IT consulting,
+        I managed a mortgage branch, worked on software systems, and built strong client
+        relationships. I’m also a lifelong musician — I play guitar and bass when I’m not
+        building systems or hosting community events.
+      </p>
+    </div>
+  </div>
+</main>
 
   <footer class="border-t border-slate-200 py-8">
     <div class="max-w-5xl mx-auto px-6 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
