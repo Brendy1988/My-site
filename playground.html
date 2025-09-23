@@ -91,13 +91,25 @@
   
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
-      // Parallax effect for cards
+      // Optimized parallax effect for cards using requestAnimationFrame
+      let lastScrollY = window.scrollY;
+      let ticking = false;
       function parallaxCards() {
         document.querySelectorAll('.parallax-card').forEach((card, i) => {
-          card.style.transform = `translateY(${window.scrollY * (0.08 + i*0.04)}px)`;
+          card.style.transform = `translateY(${lastScrollY * (0.08 + i*0.04)}px)`;
         });
+        ticking = false;
       }
-      window.addEventListener('scroll', parallaxCards);
+      function onScroll() {
+        lastScrollY = window.scrollY;
+        if (!ticking) {
+          window.requestAnimationFrame(parallaxCards);
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll);
+      // Initial call in case page is loaded scrolled
+      parallaxCards();
     </script>
   </body>
 </html>
