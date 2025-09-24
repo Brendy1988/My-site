@@ -4,24 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brendan — Playground</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <meta name="description" content="Brendan — Managed IT & Cybersecurity" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-black min-h-screen text-slate-100 flex flex-col relative">
-    <!-- Neon Blobs Background -->
-    <div class="absolute inset-0 -z-10 pointer-events-none">
-      <div class="absolute top-[-10%] left-[5%] w-[64vw] max-w-[400px] h-[64vw] max-h-[400px] bg-teal-400 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
-      <div class="absolute bottom-[-10%] right-[10%] w-[56vw] max-w-[350px] h-[56vw] max-h-[350px] bg-pink-500 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
+
+  <!-- Key layout: body is a vertical flex column that fills the viewport.
+       main uses flex-1 (no min-h-screen) so the footer rests at the bottom. -->
+  <body class="bg-black min-h-screen text-slate-100 flex flex-col relative antialiased">
+    <!-- Neon Blobs Background (clipped so they don't extend page height) -->
+    <div class="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
+      <div class="absolute top-0 left-[5%] w-[64vw] max-w-[400px] h-[64vw] max-h-[400px] bg-teal-400 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
+      <div class="absolute bottom-0 right-[10%] w-[56vw] max-w-[350px] h-[56vw] max-h-[350px] bg-pink-500 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
       <div class="absolute top-[40%] left-[60%] w-[48vw] max-w-[300px] h-[48vw] max-h-[300px] bg-blue-500 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
       <div class="absolute bottom-[20%] left-[20%] w-[40vw] max-w-[250px] h-[40vw] max-h-[250px] bg-yellow-400 opacity-20 blur-3xl rounded-full mix-blend-lighten"></div>
     </div>
+
     <!-- Header -->
     <header class="w-full sticky top-0 z-10">
       <div class="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 sm:py-6 bg-white/10 backdrop-blur-lg shadow-lg ring-1 ring-white/20 rounded-b-2xl w-full">
-        <a href="/" class="flex items-center mb-2 sm:mb-0">
-          <img src="assets/webistix-logo.png" alt="Webistix Logo" class="w-24 sm:w-32 h-10 sm:h-12 object-contain" />
+        <a href="/" class="flex items-center gap-3 mb-2 sm:mb-0" aria-label="Webistix Home">
+          <img src="assets/webistix-logo.png" alt="Webistix logo" class="w-24 sm:w-32 h-10 sm:h-12 object-contain" />
         </a>
-        <nav class="flex flex-wrap gap-4 sm:gap-8 items-center text-base sm:text-lg font-medium">
+        <nav class="flex flex-wrap gap-4 sm:gap-8 items-center text-base sm:text-lg font-medium" aria-label="Primary">
           <a href="/" class="hover:text-teal-400 transition">Home</a>
           <a href="/about.html" class="hover:text-teal-400 transition">About</a>
           <a href="/contact.html" class="hover:text-teal-400 transition">Contact</a>
@@ -29,60 +33,96 @@
         </nav>
       </div>
     </header>
-    <!-- Main Content: Responsive Layout -->
-    <main class="flex-1 flex flex-col items-center justify-center px-2 sm:px-6 py-4 sm:py-8 scroll-snap-y scroll-snap-mandatory overflow-y-auto h-screen">
-      <!-- Hero Card Full Width (Section 1) -->
-      <section class="w-full max-w-6xl mb-6 scroll-snap-start flex flex-col sm:flex-row items-center gap-6 sm:gap-8 min-h-[24rem] sm:min-h-[32rem] relative">
-        <div class="flex-1 flex items-center justify-center sm:order-1">
-          <div class="w-full max-w-md">
-            <h1 class="text-2xl sm:text-4xl font-extrabold text-teal-200 drop-shadow-lg text-left">Next-Gen IT Solutions</h1>
-            <p class="text-base sm:text-lg text-white/80 text-left mt-2">Secure, automate, and empower your team with tailored IT & cybersecurity. Simple, scalable, and always up-to-date.</p>
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full justify-start mt-4">
-              <a href="/contact.html" class="px-5 sm:px-7 py-2 sm:py-3 rounded-xl bg-teal-600/80 text-white font-semibold shadow-lg hover:bg-teal-700/90 transition backdrop-blur-md text-center">Get Started</a>
-              <a href="/about.html" class="px-5 sm:px-7 py-2 sm:py-3 rounded-xl bg-white/10 text-teal-200 font-semibold shadow-lg hover:bg-white/20 transition border border-teal-400/30 backdrop-blur-md text-center">Learn More</a>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center px-2 sm:px-6 py-6 sm:py-10 w-full">
+      <!-- Hero -->
+      <section class="w-full max-w-6xl mb-8 min-h-[28rem] sm:min-h-[36rem] relative flex items-center justify-center">
+        <!-- Background Image fills the hero -->
+        <div class="absolute inset-0 w-full h-full">
+          <img src="assets/keyboard-hero.jpg" alt="Futuristic workspace with glowing laptop and neon accents" class="w-full h-full object-cover rounded-3xl opacity-80" />
+          <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-teal-900/30 to-transparent rounded-3xl"></div>
+        </div>
+        <!-- Glassmorphic Overlay for Hero Content -->
+        <div class="relative z-10 w-full flex items-center justify-center">
+          <div class="w-full max-w-xl bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl border border-teal-400/30 p-8 mx-4">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-teal-200 drop-shadow-lg text-left">
+              Next-Gen IT Solutions
+            </h1>
+            <p class="text-base sm:text-lg text-white/80 text-left mt-3">
+              Secure, automate, and empower your team with tailored IT &amp; cybersecurity. Simple, scalable, and always up-to-date.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full justify-start mt-5">
+              <a href="/contact.html" class="px-5 sm:px-7 py-2 sm:py-3 rounded-xl bg-teal-600/80 text-white font-semibold shadow-lg hover:bg-teal-700/90 transition backdrop-blur-md text-center">
+                Get Started
+              </a>
+              <a href="/about.html" class="px-5 sm:px-7 py-2 sm:py-3 rounded-xl bg-white/10 text-teal-200 font-semibold shadow-lg hover:bg-white/20 transition border border-teal-400/30 backdrop-blur-md text-center">
+                Learn More
+              </a>
             </div>
           </div>
         </div>
-        <div class="flex-1 flex items-center justify-center sm:order-2">
-          <img src="assets/files-data.webp" alt="Managed IT" class="w-full sm:w-4/5 h-auto object-cover rounded-3xl shadow-lg opacity-80" />
-        </div>
       </section>
-      <!-- Features Cards Underneath -->
-      <aside class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+
+      <!-- Feature Cards -->
+      <aside class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-4">
         <div class="relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg ring-1 ring-white/20 p-6 sm:p-8 border border-teal-400/30 w-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_0_rgba(0,255,255,0.3)] hover:ring-2 hover:ring-teal-400/60">
           <div class="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-white/30 to-transparent rounded-2xl pointer-events-none"></div>
           <div class="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-teal-300"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414M17.95 17.95l-1.414-1.414M6.05 6.05L4.636 4.636" /><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414M17.95 17.95l-1.414-1.414M6.05 6.05L4.636 4.636" />
+              <circle cx="12" cy="12" r="5" />
+            </svg>
             <h3 class="text-base sm:text-lg font-bold text-teal-200">Firewall Management</h3>
           </div>
-          <p class="text-white/80 text-sm sm:text-base">Proactive monitoring, updates, and patching to keep your network safe from threats.</p>
+          <p class="text-white/80 text-sm sm:text-base">
+            Proactive monitoring, updates, and patching to keep your network safe from threats.
+          </p>
         </div>
+
         <div class="relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg ring-1 ring-white/20 p-6 sm:p-8 border border-blue-400/30 w-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_0_rgba(0,255,255,0.3)] hover:ring-2 hover:ring-blue-400/60">
           <div class="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-white/30 to-transparent rounded-2xl pointer-events-none"></div>
           <div class="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-300"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 9-6" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 9-6" />
+            </svg>
             <h3 class="text-base sm:text-lg font-bold text-blue-200">Cloud Solutions</h3>
           </div>
-          <p class="text-white/80 text-sm sm:text-base">Seamless migration and management for productivity, security, and scalability.</p>
+          <p class="text-white/80 text-sm sm:text-base">
+            Seamless migration and management for productivity, security, and scalability.
+          </p>
         </div>
+
         <div class="relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg ring-1 ring-white/20 p-6 sm:p-8 border border-indigo-400/30 w-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_0_rgba(0,255,255,0.3)] hover:ring-2 hover:ring-indigo-400/60">
           <div class="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-white/30 to-transparent rounded-2xl pointer-events-none"></div>
           <div class="flex items-center gap-2 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-indigo-300"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" /><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            <h3 class="text-base sm:text-lg font-bold text-indigo-200">Compliance & Support</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+            <h3 class="text-base sm:text-lg font-bold text-indigo-200">Compliance &amp; Support</h3>
           </div>
-          <p class="text-white/80 text-sm sm:text-base">Expert guidance to keep your business compliant and your team supported 24/7.</p>
+          <p class="text-white/80 text-sm sm:text-base">
+            Expert guidance to keep your business compliant and your team supported 24/7.
+          </p>
         </div>
       </aside>
     </main>
-    <!-- Footer -->
+
+    <!-- Footer (naturally sits at bottom; scrolls when content is taller) -->
     <footer class="w-full py-6 sm:py-8 bg-white/10 backdrop-blur-lg border-t border-white/20">
       <div class="max-w-6xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center text-white/80 text-sm sm:text-base">
         <span>&copy; <span id="year"></span> Webistix. All rights reserved.</span>
       </div>
     </footer>
+
+    <!-- Tiny inline script to set the year -->
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      (function () {
+        var y = document.getElementById('year');
+        if (y) y.textContent = new Date().getFullYear();
+      })();
     </script>
   </body>
 </html>

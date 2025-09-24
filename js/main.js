@@ -1,2 +1,7 @@
 // Basic helpers
-document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
+document.addEventListener('DOMContentLoaded', function() {
+  var yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
