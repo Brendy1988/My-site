@@ -34,14 +34,14 @@
 <body class="bg-black min-h-screen text-slate-100 flex flex-col relative antialiased">
   <!-- Neon Blobs Background (clipped so they don't extend page height) -->
   <div class="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
-    <div class="absolute top-0 left-[5%] w-[64vw] max-w-[400px] h-[64vw] max-h-[400px] bg-teal-400 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
+    <div class="absolute top-0 left-[5%] w-[64vw] max-w-[400px] h-[64vw] max-h-[400px] bg-blue-400 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
     <div class="absolute bottom-0 right-[10%] w-[56vw] max-w-[350px] h-[56vw] max-h-[350px] bg-pink-500 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
     <div class="absolute top-[40%] left-[60%] w-[48vw] max-w-[300px] h-[48vw] max-h-[300px] bg-blue-500 opacity-30 blur-3xl rounded-full mix-blend-lighten"></div>
     <div class="absolute bottom-[20%] left-[20%] w-[40vw] max-w-[250px] h-[40vw] max-h-[250px] bg-yellow-400 opacity-20 blur-3xl rounded-full mix-blend-lighten"></div>
   </div>
 
   <!-- Header -->
-  <header class="w-full sticky top-0 z-10">
+  <header class="w-full sticky top-0 z-50">
     <div class="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-4 sm:py-6 bg-white/10 backdrop-blur-lg shadow-lg ring-1 ring-white/20 rounded-b-2xl w-full">
       <a href="/" class="flex items-center gap-3 mb-2 sm:mb-0" aria-label="Webistix Home">
         <img src="assets/webistix-logo.png" alt="Webistix logo" class="w-24 sm:w-32 h-10 sm:h-12 object-contain" />
@@ -63,13 +63,13 @@
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-[color:var(--ink)]/90 backdrop-blur">
-      <div class="px-4 py-3 space-y-2">
-        <a href="#services" class="block py-2 text-white/90">Services</a>
-        <a href="#trust" class="block py-2 text-white/90">Why Us</a>
-        <a href="#process" class="block py-2 text-white/90">Process</a>
-        <a href="#contact" class="block py-2 text-white/90">Contact</a>
-        <a href="#contact" class="block mt-2 bg-[color:var(--teal)] text-[color:var(--ink)] font-semibold px-4 py-2 rounded-md text-center">Request a Consult</a>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-gradient-to-br from-[color:var(--navy)] via-[color:var(--ink)] to-[color:var(--teal)]/30 backdrop-blur-lg shadow-xl rounded-b-2xl">
+      <div class="px-6 py-5 space-y-3">
+        <a href="#services" class="block py-2 px-3 rounded-lg text-white/90 hover:bg-teal-500/10 transition">Services</a>
+        <a href="#trust" class="block py-2 px-3 rounded-lg text-white/90 hover:bg-teal-500/10 transition">Why Us</button></a>
+        <a href="#process" class="block py-2 px-3 rounded-lg text-white/90 hover:bg-teal-500/10 transition">Process</a>
+        <a href="#contact" class="block py-2 px-3 rounded-lg text-white/90 hover:bg-teal-500/10 transition">Contact</a>
+        <a href="#contact" class="block mt-3 bg-[color:var(--teal)] text-[color:var(--ink)] font-semibold px-4 py-2 rounded-lg text-center shadow hover:opacity-90 transition">Request a Consult</a>
       </div>
     </div>
   </header>
@@ -102,8 +102,8 @@
               <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--teal)] text-[color:var(--ink)] font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:var(--teal)]">
                 Request a Consult
               </a>
-              <a href="tel:16314380165" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/20 hover:border-white/40 text-white focus:outline-none focus:ring-2 focus:ring-[color:var(--teal)]">
-                Call 631-438-0165
+              <a href="tel:16314721400" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/20 hover:border-white/40 text-white focus:outline-none focus:ring-2 focus:ring-[color:var(--teal)]">
+                Call (631) 472-1400
               </a>
             </div>
           </div>
@@ -241,16 +241,16 @@
   </section>
 
   <!-- Process -->
-  <section id="process" class="py-16 sm:py-24 border-t border-white/10">
+  <section id="process" class="py-16 sm:py-24 border-t border-white/10 scroll-mt-32">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl sm:text-3xl font-bold mb-8">Our 4-step process</h2>
-      <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+  <div class="relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-8">
         <!-- Connector line -->
         <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-teal-400 via-purple-400 to-pink-400 opacity-40 z-0"></div>
         <!-- Step 1 -->
         <div class="glass rounded-2xl border border-white/10 p-7 flex flex-col items-center text-center relative z-10 w-full md:w-1/4">
           <div class="w-12 h-12 mb-3 rounded-full bg-teal-500/30 flex items-center justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>
           </div>
           <div class="text-2xl font-bold mb-1 text-teal-300">1</div>
           <h3 class="font-semibold">Assess</h3>
@@ -259,7 +259,7 @@
         <!-- Step 2 -->
         <div class="glass rounded-2xl border border-white/10 p-7 flex flex-col items-center text-center relative z-10 w-full md:w-1/4">
           <div class="w-12 h-12 mb-3 rounded-full bg-blue-500/30 flex items-center justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale-icon lucide-scale"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
           </div>
           <div class="text-2xl font-bold mb-1 text-blue-300">2</div>
           <h3 class="font-semibold">Stabilize</h3>
@@ -268,7 +268,7 @@
         <!-- Step 3 -->
         <div class="glass rounded-2xl border border-white/10 p-7 flex flex-col items-center text-center relative z-10 w-full md:w-1/4">
           <div class="w-12 h-12 mb-3 rounded-full bg-purple-500/30 flex items-center justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check-icon lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
           <div class="text-2xl font-bold mb-1 text-purple-300">3</div>
           <h3 class="font-semibold">Secure</h3>
@@ -277,7 +277,7 @@
         <!-- Step 4 -->
         <div class="glass rounded-2xl border border-white/10 p-7 flex flex-col items-center text-center relative z-10 w-full md:w-1/4">
           <div class="w-12 h-12 mb-3 rounded-full bg-pink-500/30 flex items-center justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17h16M4 7h16"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cog-icon lucide-monitor-cog"><path d="M12 17v4"/><path d="m14.305 7.53.923-.382"/><path d="m15.228 4.852-.923-.383"/><path d="m16.852 3.228-.383-.924"/><path d="m16.852 8.772-.383.923"/><path d="m19.148 3.228.383-.924"/><path d="m19.53 9.696-.382-.924"/><path d="m20.772 4.852.924-.383"/><path d="m20.772 7.148.924.383"/><path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M8 21h8"/><circle cx="18" cy="6" r="3"/></svg>
           </div>
           <div class="text-2xl font-bold mb-1 text-pink-300">4</div>
           <h3 class="font-semibold">Optimize</h3>
@@ -308,7 +308,7 @@
       <div class="grid lg:grid-cols-2 gap-10 items-start">
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold">Contact</h2>
-          <p class="mt-2 text-white/70">Prefer to talk now? <a class="underline underline-offset-2 hover:text-white" href="tel:16314380165">631-438-0165</a></p>
+          <p class="mt-2 text-white/70">Prefer to talk now? <a class="underline underline-offset-2 hover:text-white" href="tel:16314721400">631-472-1400</a></p>
           <div class="mt-6 space-y-2 text-white/70">
             <p><strong>Email:</strong> <a class="underline underline-offset-2" href="mailto:brendan@webistix.com">brendan@webistix.com</a></p>
             <p><strong>Hours:</strong> Mon–Fri, 8am–6pm ET</p>
@@ -335,6 +335,31 @@
           <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 rounded-md bg-[color:var(--teal)] text-[color:var(--ink)] font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:var(--teal)]">Send</button>
           <p class="text-xs text-white/60">We respond within 1 business day. We’ll never share your info.</p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section id="partners" class="py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold">Our Partners</h2>
+        <p class="mt-2 text-white/70">We proudly collaborate with industry leaders to deliver the best solutions for our clients.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center">
+        <div class="glass rounded-xl p-6 flex items-center justify-center">
+          <img src="assets/webistix-logo.png" alt="Webistix" class="h-12 object-contain" />
+        </div>
+        <div class="glass rounded-xl p-6 flex items-center justify-center">
+          <img src="assets/cyber-hero.jpg" alt="Cyber Partner" class="h-12 object-contain rounded" />
+        </div>
+        <div class="glass rounded-xl p-6 flex items-center justify-center">
+          <img src="assets/laptop-black-neon.jpg" alt="Tech Partner" class="h-12 object-contain rounded" />
+        </div>
+        <div class="glass rounded-xl p-6 flex items-center justify-center">
+          <img src="assets/keyboard-hero.jpg" alt="Keyboard Partner" class="h-12 object-contain rounded" />
+        </div>
+        <!-- Add more partner logos as needed -->
       </div>
     </div>
   </section>
