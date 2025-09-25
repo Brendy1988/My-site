@@ -346,21 +346,29 @@
         <h2 class="text-2xl sm:text-3xl font-bold">Our Partners</h2>
         <p class="mt-2 text-white/70">We proudly collaborate with industry leaders to deliver the best solutions for our clients.</p>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center">
-        <div class="glass rounded-xl p-6 flex items-center justify-center">
-          <img src="assets/webistix-logo.png" alt="Webistix" class="h-12 object-contain" />
+      <div class="overflow-x-hidden py-4">
+        <div class="flex gap-12 animate-partner-marquee w-max">
+          <img src="assets/apple-reseller.webp" alt="Apple Reseller" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/synology.webp" alt="Synology" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/sonicwall.webp" alt="Sonicwall" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/cisco.webp" alt="Cisco" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/cyberguard360.webp" alt="CyberGuard360" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/dell.webp" alt="Dell" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/microsoft-partner.webp" alt="Microsoft Partner" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/n-able.webp" alt="N-able" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/SentinelOne.webp" alt="SentinelOne" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
+          <img src="assets/xerox.webp" alt="Xerox" class="h-12 object-contain grayscale opacity-80 hover:opacity-100 transition" />
         </div>
-        <div class="glass rounded-xl p-6 flex items-center justify-center">
-          <img src="assets/cyber-hero.jpg" alt="Cyber Partner" class="h-12 object-contain rounded" />
-        </div>
-        <div class="glass rounded-xl p-6 flex items-center justify-center">
-          <img src="assets/laptop-black-neon.jpg" alt="Tech Partner" class="h-12 object-contain rounded" />
-        </div>
-        <div class="glass rounded-xl p-6 flex items-center justify-center">
-          <img src="assets/keyboard-hero.jpg" alt="Keyboard Partner" class="h-12 object-contain rounded" />
-        </div>
-        <!-- Add more partner logos as needed -->
       </div>
+  <style>
+    @keyframes partner-marquee {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .animate-partner-marquee {
+      animation: partner-marquee 30s linear infinite;
+    }
+  </style>
     </div>
   </section>
 
